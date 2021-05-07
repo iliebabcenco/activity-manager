@@ -1,3 +1,3 @@
 class Activity < ApplicationRecord
-  belongs_to :author_id
+  belongs_to :author, :class_name: 'User'
 end
