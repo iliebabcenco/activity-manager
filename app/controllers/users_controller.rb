@@ -5,8 +5,11 @@ class UsersController < Devise::RegistrationsController
     def index
         @users = User.all
     end
+
     private
-    def person_params
-       params.require(:user).permit(:username)
+
+    def user_params
+       params.require(:user).permit(:email, :username)
+    #    params.require(:user).permit(:username)
     end
 end
