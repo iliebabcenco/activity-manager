@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+<%= user.email %>
+<%= link_to "Show profile", user_path(user.id) %>
+<hr>
+<% end %>
