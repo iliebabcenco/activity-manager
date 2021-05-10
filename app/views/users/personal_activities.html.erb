@@ -1,0 +1,11 @@
+There is your personal
+<% current_user.personal_activities.each do |act| %>
+<%= act.name %>
+<%= act.description %>
+group id : <%= act.group_id %>
+<p>Posted by <%= act.author.email %> at <%= act.created_at %></p>
+<hr>
+<% end %>
+
+<%=  link_to "Add new personal activity", add_personal_activity_path %>
+<%=  link_to "Back to my page", user_path(current_user.id) %>

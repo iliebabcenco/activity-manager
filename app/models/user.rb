@@ -6,4 +6,11 @@ class User < ApplicationRecord
   has_many :activities, foreign_key: "author_id", class_name: 'Activity', dependent: :destroy
   has_many :groups, foreign_key: "creator_id", class_name: 'Group', dependent: :destroy
   
+  def personal_activities
+    personal = Activity.personal
+  end
+  def external_activities
+    external = Activity.external
+  end
+
 end

@@ -1,7 +1,7 @@
 <h1>Last activities</h1>
 <% @activities.each do |activity| %>
 <%= activity.name %>
-<%= activity.amount %>
+<%= activity.description %>
 <p>Posted by <%= activity.author.email %> at <%= activity.created_at %></p>
 <% end %>
 <hr>

@@ -1,0 +1,11 @@
+<p>There is your external activities:</p>
+<hr>
+<% current_user.external_activities.each do |act| %>
+<%= act.name %>
+<%= act.description %>
+group id<%= act.group_id %>
+<p>Posted by <%= act.author.email %> at <%= act.created_at %></p>
+<hr>
+<% end %>
+
+<%=  link_to "Back to my page", user_path(current_user.id) %>
