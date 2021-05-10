@@ -1,0 +1,12 @@
+ <%= form_with model: @activity do |a| %>
+ <div>
+     <%= a.text_field :name %>
+ </div>
+ <div class="my-4">
+     <%= a.number_field :amount, required: true, class: "p-1" %>
+ </div>
+ <div class="d-flex justify-content-end">
+     <%= a.submit 'Create Activity', class: "btn btn-success px-5" %>
+ </div>
+ <% end %>
+ <%= link_to "Go to main Page", root_path %>
