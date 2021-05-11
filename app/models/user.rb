@@ -7,16 +7,19 @@ class User < ApplicationRecord
   has_many :groups, foreign_key: "creator_id", class_name: 'Group', dependent: :destroy
   
   def personal_activities
-    personal = activities.personal
+    activities.personal
   end
   def personal_recent_activities
-    personal = activities.personal
+    activities.personal
   end
   def personal_previous_activities
-    personal = activities.personal.order('created_at desc')
+    activities.personal.order('created_at desc')
   end
   def external_activities
-    external = activities.external
+    activities.all.external
+  end
+  def external_previous_activities
+    activities.all.external.order('created_at desc')
   end
 
 end

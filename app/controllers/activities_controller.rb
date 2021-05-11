@@ -27,7 +27,7 @@ class ActivitiesController < ApplicationController
     def create_external
 
         @user = current_user
-        @activity = @user.activities.build(activity_external_params)
+        @activity = @user.external_activities.build(activity_external_params)
         if @activity.save
             redirect_to external_activities_path, notice: 'Your activity was successfuly created!'
         else

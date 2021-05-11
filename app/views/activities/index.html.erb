@@ -2,7 +2,9 @@
 <% @activities.each do |activity| %>
 <%= activity.name %>
 <%= activity.description %>
-<p>Posted by <%= activity.author.email %> at <%= activity.created_at %></p>
+<p>Posted by <%= activity.author.username %> at <%= activity.created_at %></p>
+<h4>Group name <%= activity.group.name unless activity.group.nil? %> with admin: <%= activity.group.creator.username unless activity.group.nil? %></h4>
+<hr>
 <% end %>
 <hr>
 <% if user_signed_in? %>
