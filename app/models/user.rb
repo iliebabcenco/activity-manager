@@ -4,6 +4,10 @@ class User < ApplicationRecord
   #validates :email, uniqueness: true
   #validates :username, uniqueness: true
   has_many :activities, foreign_key: "author_id", class_name: 'Activity', dependent: :destroy
+
+  has_many :activity_participations, foreign_key: "participant_id", class_name: 'ActivityParticipation'
+  has_many :participed_activities, through: :activity_participations, source: :activity
+
   has_many :groups, foreign_key: "creator_id", class_name: 'Group', dependent: :destroy
   
   def personal_activities
@@ -21,5 +25,6 @@ class User < ApplicationRecord
   def external_previous_activities
     activities.all.external.order('created_at desc')
   end
+
 
 end

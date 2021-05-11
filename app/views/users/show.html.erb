@@ -1,27 +1,5 @@
 <br>
 <br>
-Hey <%= @user.username %>!
+<%= display_user_page(@user) %>
 
-
-<br>
-<br>
-<br>
-<br>
-
-<%= link_to "Personal activities", personal_activities_path(:sorted => "true") %>
-<br>
-<br>
-<%= link_to "External activities", external_activities_path %>
-<br>
-<br>
-<%= link_to "All participations", external_activities_path %>
-<br>
-<br>
-<%= link_to "All groups", groups_path %>
-<br>
-<br>
-<%#= link_to "Create Activity", new_activity_path %>
-<%= link_to "Go to main Page", root_path %>
-<br>
-<br>
-<%= link_to "Sign Out", destroy_user_session_path %>
+<%= Activity.first.participants.first.username %>

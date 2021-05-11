@@ -8,7 +8,13 @@ By: <%= link_to @group.creator.username, user_path(@group.creator.id) %>
 <br>
 <hr>
 <br>
+
+<h3>Group's activities:</h3>
+<% @group.activities.each do |act| %>
+<h4>Activity: <%= act.name %></h4>
+<p> organized by <%= act.author.username %> for <%= act.schedule_date %></p>
 <hr>
+<% end %>
 <%=  link_to "Add new external activity", activities_new_external_path(group: @group.id) %> <br>
 <%= link_to "All groups", groups_path %>
 <%= link_to "Back to my page", user_path(current_user.id) %>

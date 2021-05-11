@@ -3,7 +3,7 @@
 <%= link_to "Most Recent", personal_activities_path(:sorted => "true") %>
 <%= link_to "Most Ancient", personal_activities_path(:sorted => "false") %>
 
-<%  display_personal_activities_by_param(params[:sorted], current_user).each do |act|  %>
+<% display_personal_activities_by_param(params[:sorted], current_user).each do |act|  %>
 <p>Activity name: <%= act.name %></p>
 <p>Activity descritpion: <%= act.description %></p>
 <p>Organized by: <%= act.author.username %></p>
