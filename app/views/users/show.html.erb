@@ -8,7 +8,7 @@ Hey <%= @user.username %>!
 <br>
 <br>
 
-<%= link_to "Personal activities", personal_activities_path %>
+<%= link_to "Personal activities", personal_activities_path(:sorted => "true") %>
 <br>
 <br>
 <%= link_to "External activities", external_activities_path %>

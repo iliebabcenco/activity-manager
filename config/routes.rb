@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   end
   root "activities#index"
  
-  resources :activities, only: [:index, :show, :new, :create]
-  get "activities/new-personal", to: "activities#new_personal"
+  resources :activities, only: [:index, :new, :create_personal]
+  get "activities/new-personal", to: "activities#new"
   get "activities/new-external", to: "activities#new_external"
-  post "activities/new_personal", to: "activities#create_personal"
+  post "activities/new-personal", to: "activities#create_personal"
   post "activities/new-external", to: "activities#create_external"
   resources :groups, only: [:index, :show, :new, :create]
 

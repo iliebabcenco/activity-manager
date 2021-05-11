@@ -1,0 +1,15 @@
+ <br>
+ <br>
+ <h3>Add a new Group</h3>
+ <%= form_with model: @group, url: groups_path do |a| %>
+ <div>
+     <%= a.text_field :name, required: true %>
+ </div>
+ <div class="my-4">
+     <%= a.text_field :icon, required: true, class: "p-1" %>
+ </div>
+ <div class="d-flex justify-content-end">
+     <%= a.submit 'Create Activity', class: "btn btn-success px-5" %>
+ </div>
+ <% end %>
+ <%= link_to "Go to main Page", root_path %>

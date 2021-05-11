@@ -1,7 +1,8 @@
  <br>
  <br>
- <h3>Add a new personal activity</h3>
- <%= form_with model: @activity, url: activities_new_personal_path do |a| %>
+ <h3>Add a new external activity</h3>
+ <%= form_with model: @activity, url: activities_new_external_path do |a| %>
+ <%=a.hidden_field :group_id, value: params[:group] %>
  <div>
      <%= a.text_field :name %>
  </div>
@@ -16,3 +17,4 @@
  </div>
  <% end %>
  <%= link_to "Go to main Page", root_path %>
+ <%= link_to "Back to my page", user_path(current_user.id) %>

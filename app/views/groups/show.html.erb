@@ -1,0 +1,13 @@
+<br>
+
+<h1>Group Name: <%= @group.name %><%#= link_to gr.name, group_path(group.id) %></h1>
+<%= @group.icon %>
+<br>
+Created at : <%= @group.created_at %>
+By: <%= link_to @group.creator.username, user_path(@group.creator.id) %>
+<br>
+<hr>
+<br>
+<%=  link_to "Add new external activity", activities_new_external_path(group: @group.id) %> <br>
+<%= link_to "All groups", groups_path %>
+<%= link_to "Back to my page", user_path(current_user.id) %>
