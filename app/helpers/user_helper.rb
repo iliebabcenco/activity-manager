@@ -7,7 +7,7 @@ module UserHelper
             return user.external_previous_activities.to_a
         end
     end
-    def display_personal_activities_by_param(param="true", user)
+    def display_personal_activities(param="true", user)
         if param == "true"
             return user.personal_activities.to_a
         else
