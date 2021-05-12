@@ -8,4 +8,7 @@ class Activity < ApplicationRecord
   scope :personal, -> { where(group_id: nil) }
   scope :external, -> { where("group_id is not null") }
 
+
+  
+
 end

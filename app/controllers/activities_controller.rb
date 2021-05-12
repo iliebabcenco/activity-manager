@@ -14,9 +14,9 @@ class ActivitiesController < ApplicationController
     end
     def create_personal
 
-        @user = current_user
-        @activity = @user.activities.build(activity_personal_params)
-        if @activity.save
+        user = current_user
+        activity = user.create_personal_activity(activity_personal_params)
+        if activity
             redirect_to personal_activities_path, notice: 'Your activity was successfuly created!'
         else
             render :new, alert: "Something wrong"
@@ -26,9 +26,11 @@ class ActivitiesController < ApplicationController
 
     def create_external
 
-        @user = current_user
-        @activity = @user.external_activities.build(activity_external_params)
-        if @activity.save
+        user = current_user
+
+        activity = user.create_external_activity(activity_external_params)
+
+        if activity
             redirect_to external_activities_path, notice: 'Your activity was successfuly created!'
         else
             render :new, alert: "Something wrong"

@@ -34,4 +34,33 @@ class User < ApplicationRecord
     all_desc_participations = all_participations.reverse
   end
 
+  def create_external_activity(activity_external_params)
+    result = false
+    activity = external_activities.build(activity_external_params)
+    begin
+      ActiveRecord::Base.transaction do
+        activity.save!
+        act_particip = ActivityParticipation.create(participant_id: self.id, activity_id: activity.id)
+        result = true
+      end
+      rescue ActiveRecord::Rollback
+        result = false
+      end
+      result
+  end
+  def create_personal_activity(activity_personal_params)
+    result = false
+    activity = personal_activities.build(activity_personal_params)
+    begin
+      ActiveRecord::Base.transaction do
+        activity.save!
+        act_particip = ActivityParticipation.create(participant_id: self.id, activity_id: activity.id)
+        result = true
+      end
+      rescue ActiveRecord::Rollback
+        result = false
+      end
+      result
+  end
+
 end
