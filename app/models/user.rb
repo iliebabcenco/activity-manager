@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  #validates :email, uniqueness: true
-  #validates :username, uniqueness: true
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
   has_many :activities, foreign_key: "author_id", class_name: 'Activity', dependent: :destroy
 
   has_many :activity_participations, foreign_key: "participant_id", class_name: 'ActivityParticipation', dependent: :destroy
@@ -28,10 +28,10 @@ class User < ApplicationRecord
     activities.all.external.order('schedule_date desc')
   end
   def all_participations
-    all_participations = (personal_activities + external_activities + participed_activities).sort_by &:schedule_date
+    participed_activities.order('schedule_date')
   end
   def all_desc_participations
-    all_desc_participations = all_participations.reverse
+    participed_activities.order('schedule_date desc')
   end
 
   def create_external_activity(activity_external_params)
