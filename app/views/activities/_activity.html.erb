@@ -3,4 +3,6 @@
 <p>Organized by: <%= activity.author.username %></p>
 <p>Activity created: <%= activity.created_at %></p>
 <p>Activity date: <%= activity.schedule_date %></p>
+
+<%= display_participation_button(activity, current_user) %>
 <hr>

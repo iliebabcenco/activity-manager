@@ -1,8 +1,10 @@
 class GroupsController < ApplicationController
     def index
         @groups = Group.all
+        
     end
     def new
+        
         @group = Group.new
     end
     def create
@@ -16,7 +18,7 @@ class GroupsController < ApplicationController
     end
     def show
         @group = Group.find(params[:id])
-
+        @activity_participation = ActivityParticipation.new
     end
 
 
