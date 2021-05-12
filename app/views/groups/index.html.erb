@@ -1,15 +1,9 @@
-<h1>All Groups</h1>
-<% @groups.each do |gr| %>
-Group Name: <%#= gr.name %><%= link_to gr.name, group_path(gr.id) %>
-<br>
-<%= gr.icon %>
-<br>
-Created at : <%= gr.created_at %>
-By: <%= link_to gr.creator.username, user_path(gr.creator.id) %>
-<br>
-<hr>
-<% end %>
-<%= link_to "Create new group", new_group_path %>
-<br>
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">All groups</h3>
+    </div>
+</header>
+<%= render @groups %>
 
-<%= link_to "Back to my page", user_path(current_user.id) %>
+<%= link_to "Create new group", new_group_path, class: "btn-link add-link" %>

@@ -1,17 +1,14 @@
-<p>There is your external activities:</p>
-<%= link_to "Most Recent", external_activities_path(:sorted => "true") %>
-<%= link_to "Most Ancient", external_activities_path(:sorted => "false") %>
-<hr>
-<% display_external_activities_by_param(params[:sorted], current_user).each do |act| %>
-<p>Activity name: <%= act.name %></p>
-<p>Activity descritpion: <%= act.description %></p>
-<p>Organized by: <%= act.author.username %></p>
-<p>Activity created: <%= act.created_at %></p>
-<p>Activity date: <%= act.schedule_date %></p>
-Group name: <%= link_to act.group.name, group_path(act.group.id) %>
-<p>Posted by <%= act.author.email %> at <%= act.created_at %></p>
-<hr>
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">External activities</h3>
+    </div>
+</header>
+<div class="most_div">
+    <%= link_to "Most Recent", external_activities_path(:sorted => "true"), class: 'most_btn' %>
+    <%= link_to "Most Ancient", external_activities_path(:sorted => "false"), class: 'most_btn' %>
+</div>
 
-<% end %>
 
-<%=  link_to "Back to my page", user_path(current_user.id) %>
+<%= render display_external_activities_by_param(params[:sorted], current_user) %>
+<br>
