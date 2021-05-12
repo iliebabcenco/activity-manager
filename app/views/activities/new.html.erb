@@ -1,18 +1,20 @@
- <br>
- <br>
- <h3>Add a new personal activity</h3>
+ <header class="main-header">
+     <div class="mh-inner-div">
+         <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+         <h3 class="header-title">Add new personal activity</h3>
+     </div>
+ </header>
  <%= form_with model: @activity, url: activities_new_personal_path do |a| %>
  <div>
-     <%= a.text_field :name %>
+     <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
  </div>
  <div class="my-4">
-     <%= a.text_field :description, required: true, class: "p-1" %>
+     <%= a.text_area :description, required: true, placeholder: "Description", class:"form-control" %>
  </div>
  <div class="my-4">
-     <%= a.datetime_field :schedule_date, required: true, class: "p-1" %>
+     <%= a.datetime_field :schedule_date, required: true, class:"form-control" %>
  </div>
  <div class="d-flex justify-content-end">
-     <%= a.submit 'Create Activity', class: "btn btn-success px-5" %>
+     <%= a.submit 'Create Activity', class: "btn-link add-link" %>
  </div>
  <% end %>
- <%= link_to "Go to main Page", root_path %>

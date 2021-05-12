@@ -1,10 +1,13 @@
-<p>Activity name: <%= activity.name %></p>
-<p>Activity descritpion: <%= activity.description %></p>
-<p>Organized by: <%= activity.author.username %></p>
-<p>Activity created: <%= activity.created_at %></p>
-<p>Activity date: <%= activity.schedule_date %></p>
-
-<%= display_participation_button(activity, current_user) %>
-List of participants:
-<%= display_participants(activity, current_user) %>
-<hr>
+<div class="card m-4">
+    <div class="card-header">
+        <h4 class="mt-3 mb-4 mx-3"><%= activity.name %></h4>
+    </div>
+    <div class="card-content p-4">
+        <p><b>Activity descritpion:</b> <%= activity.description %></p>
+        <p><b>Organized by:</b> <%= activity.author.username %></p>
+        <p><b>Activity created:</b> <%= activity.created_at %></p>
+        <p><b>Activity date:</b> <%= activity.schedule_date %></p>
+        <p><b>List of participants:</b> <%= display_participants(activity, current_user) %></p>
+        <%= display_participation_button(activity, current_user) %>
+    </div>
+</div>

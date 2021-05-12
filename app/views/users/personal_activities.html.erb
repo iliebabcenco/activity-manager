@@ -1,10 +1,15 @@
-<br>
-<h3>There is your personal activities</h3>
-<%= link_to "Most Recent", personal_activities_path(:sorted => "true") %>
-<%= link_to "Most Ancient", personal_activities_path(:sorted => "false") %>
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">Personal activities</h3>
+    </div>
+</header>
+<div class="most_div">
+    <%= link_to "Most Recent", personal_activities_path(:sorted => "true"), class: 'most_btn' %>
+    <%= link_to "Most Ancient", personal_activities_path(:sorted => "false"), class: 'most_btn' %>
+</div>
 
 
 <%= render display_personal_activities(params[:sorted], current_user) %>
 
-<%=  link_to "Add new personal activity", activities_new_personal_path %> <br>
-<%=  link_to "Back to my page", user_path(current_user.id) %>
+<%= link_to "Add new personal activity", activities_new_personal_path, class:'add-link' %>

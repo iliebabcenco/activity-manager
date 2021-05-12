@@ -27,14 +27,18 @@ module UserHelper
     html=""
     if user.id == current_user.id
    
-      html += "<h3>Hey " + @user.username+"</h3>"
-      html += "<ul><li>"+(link_to "Personal activities", personal_activities_path)+"</li>"
-      html += "<li>"+(link_to "External activities", external_activities_path)+"</li>"
+      html += "<h3 class='text-white h4 ms-3 mb-5'>Hey "+ @user.username+"</h3>"
+      html += "<ul class='nav flex-column'><li class='nav-item'>"+(link_to "Personal activities", personal_activities_path, class:'nav-link active text-white')+"<hr></li>"
       
-      html += "<li>"+(link_to "All participations", activity_participations_path)+"</li>"
-      html += "<li>"+(link_to "All groups", groups_path)+"</li>"
-      html += "<li>"+(link_to "Feed", feed_path)+"</li>"
-      html += "<li>"+(link_to "Sign Out", destroy_user_session_path)+"</li></ul>"
+      html += "<li class='nav-item'>"+(link_to "External activities", external_activities_path, class:'nav-link active text-white')+"<hr></li>"
+     
+      html += "<li class='nav-item'>"+(link_to "All participations", activity_participations_path, class:'nav-link active text-white')+"<hr></li>"
+   
+      html += "<li class='nav-item'>"+(link_to "All groups", groups_path, class:'nav-link active text-white')+"<hr></li>"
+      
+      html += "<li class='nav-item'>"+(link_to "Feed", feed_path, class:'nav-link active text-white')+"<hr></li>"
+      
+      html += "<li class='nav-item'>"+(link_to "Sign Out", destroy_user_session_path, class:'nav-link active text-white')+"</li></ul>"
     
   
     end

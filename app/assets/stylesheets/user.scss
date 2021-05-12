@@ -1,3 +1,60 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$body-gradient: linear-gradient(to top right, #3084C2, #13325E);
+$nav-color: #3778c2;
+$main-font: 'proxima-nova', sans-serif !important;
+$add-color: #5fb523;
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.menu-div {
+    height: 100%;
+    background: $body-gradient;
+    padding: 15% 10%;
+}
+
+
+.menu-div hr {
+    color: white;
+}
+
+.most_btn {
+    background-color: $nav-color;
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.most_div {
+    margin-bottom: 2rem;
+    margin-right: 0.4rem;
+    text-align: right;
+}
+
+.add-link {
+    color: white;
+    background-color: $add-color;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    text-decoration: none;
+    padding: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.add-link:hover {
+    background-color: #407e15;
+    color: white;
+}
+
+.btn-link {
+    border: none;
+    width: 100%;
+}

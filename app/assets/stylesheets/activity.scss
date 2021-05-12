@@ -49,18 +49,22 @@ $main-font: 'proxima-nova', sans-serif !important;
 }
 
 .mh-inner-div {
-    display: flex;
-    width: 55%;
-    justify-content: space-between;
+    width: 100%;
+    position: relative;
     padding-top: 1.5rem;
-    padding-left: 0.8rem;
+    // margin: 0 0.8rem;
 }
 .link_i {
     color: white;
+    position: absolute;
+    left: 2%;
+}
+.header-title {
+    font-weight: bold;
 }
 
 .form-control {
-    margin: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .conf-btn {
@@ -76,4 +80,9 @@ $main-font: 'proxima-nova', sans-serif !important;
 .btn_actions {
     text-align: center;
     
+}
+
+.check-field {
+    text-align: center;
+    margin: 0.5rem;
 }
