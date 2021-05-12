@@ -63,4 +63,9 @@ class User < ApplicationRecord
       result
   end
 
+  def self.feed_arr
+    arr = Activity.all + Group.all + User.all + ActivityParticipation.all
+    ((arr.sort_by &:created_at).reverse)[0..10]
+  end
+
 end

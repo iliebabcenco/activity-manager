@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
     # attr_accessor :username
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    def index
+        @feed = User.feed_arr
+
+    end
+
     protected
 
     def configure_permitted_parameters

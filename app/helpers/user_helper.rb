@@ -33,17 +33,14 @@ module UserHelper
       
       html += "<li>"+(link_to "All participations", activity_participations_path)+"</li>"
       html += "<li>"+(link_to "All groups", groups_path)+"</li>"
-      html += "<li>"+(link_to "Feed", root_path)+"</li>"
+      html += "<li>"+(link_to "Feed", feed_path)+"</li>"
       html += "<li>"+(link_to "Sign Out", destroy_user_session_path)+"</li></ul>"
     else
         html += "<h3>" + @user.username+"</h3>"
       html += "<li>"+(link_to "External #{@user.username}'s activities", external_activities_path)+"</li>"
       html += "<li>"+(link_to "All #{@user.username}'s participations", external_activities_path)+"</li>"
       html += "<li>"+(link_to "All #{@user.username}'s groups", groups_path)+"</li></ul>"
-    #   @user.activities.each do |act| // for future participations
-    #     html += link_to "#{act.name}", 
-    #     html += link_to "Link for #{link.text}", "#"
-    #    end
+  
     end
     html.html_safe
   end

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     get "personal-activities", to: "users#personal_activities"
     get "external-activities", to: "users#external_activities"
   end
-  root "activities#index"
+  root "application#show"
+  get "feed", to: "application#index"
  
   resources :activities, only: [:index, :new, :create_personal]
   get "activities/new-personal", to: "activities#new"
