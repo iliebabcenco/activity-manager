@@ -1,3 +1,79 @@
 // Place all the styles related to the Activity controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$nav-color: #3778c2;
+$main-font: 'proxima-nova', sans-serif !important;
+
+.root_btn {
+    width: 70%;
+    margin: 0 auto !important;
+    margin-top: 1rem !important;
+    background-color: $nav-color;
+    font-family: $main-font;
+    font-weight: bold;
+}
+
+.root_btn_up {
+    width: 70%;
+    margin: 0 auto !important;
+    margin-top: 0.5rem !important;
+    background-color: white;
+    font-family: $main-font;
+    font-weight: bold;
+    color: gray;
+    border: none;
+}
+
+
+.root_btn_up:hover {
+    background-color: rgb(185, 182, 182);
+}
+
+.root_btn_div {
+    margin: 45% auto;
+    text-align: center;
+}
+
+.hello-header {
+    font-family: $main-font;
+    font-weight: bold;
+}
+
+.main-header {
+    background-color: $nav-color;
+    color: white;
+    height: 5rem;
+    text-align: center;
+    font-family: $main-font;
+    margin-bottom: 1rem;
+}
+
+.mh-inner-div {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-left: 0.8rem;
+}
+.link_i {
+    color: white;
+}
+
+.form-control {
+    margin: 0.2rem;
+}
+
+.conf-btn {
+    background-color: $nav-color;
+    color: white;
+    width: 70%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 3px;
+    padding: 0.8rem;
+}
+
+.btn_actions {
+    text-align: center;
+    
+}
