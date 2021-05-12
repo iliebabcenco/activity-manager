@@ -8,7 +8,5 @@
     <%= link_to "Most Recent", external_activities_path(:sorted => "true"), class: 'most_btn' %>
     <%= link_to "Most Ancient", external_activities_path(:sorted => "false"), class: 'most_btn' %>
 </div>
-
-
 <%= render display_external_activities_by_param(params[:sorted], current_user) %>
 <br>

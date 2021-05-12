@@ -1,15 +1,17 @@
- <br>
- <br>
- <h3>Add a new Group</h3>
- <%= form_with model: @group, url: groups_path do |a| %>
- <div>
-     <%= a.text_field :name, required: true %>
- </div>
- <div class="my-4">
-     <%= a.text_field :icon, required: true, class: "p-1" %>
- </div>
- <div class="d-flex justify-content-end">
-     <%= a.submit 'Create Activity', class: "btn btn-success px-5" %>
- </div>
- <% end %>
- <%= link_to "Go to main Page", root_path %>
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-arrow-left fa-2x'></i"), groups_path, class: "link_i" %>
+        <h3>Add a new group</h3>
+    </div>
+</header>
+<%= form_with model: @group, url: groups_path do |a| %>
+<div>
+    <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
+</div>
+<div class="my-4">
+    <%= a.text_field :icon, required: true, placeholder: "Icon URL", class:"form-control" %>
+</div>
+<div class="d-flex justify-content-end">
+    <%= a.submit 'Create Activity', class: "btn-link add-link" %>
+</div>
+<% end %>
