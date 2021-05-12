@@ -1,0 +1,8 @@
+<br>
+<h3>There are all your participations:</h3>
+<br>
+<%= link_to "Most Recent", activity_participations_path(:sorted => "true") %>
+<%= link_to "Most Ancient", activity_participations_path(:sorted => "false") %>
+<br>
+<%= render display_participation_activities(params[:sorted], current_user) %>
+<%=  link_to "Back to my page", user_path(current_user.id) %>

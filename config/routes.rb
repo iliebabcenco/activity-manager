@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   post "activities/new-personal", to: "activities#create_personal"
   post "activities/new-external", to: "activities#create_external"
   resources :groups, only: [:index, :show, :new, :create]
-
+  resources :activity_participations, only: [:index, :show, :new, :create]
 
 end

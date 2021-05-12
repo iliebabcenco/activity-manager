@@ -27,6 +27,11 @@ class User < ApplicationRecord
   def external_previous_activities
     activities.all.external.order('created_at desc')
   end
-
+  def all_participations
+    all_participations = (personal_activities + external_activities + participed_activities).sort_by &:created_at
+  end
+  def all_desc_participations
+    all_desc_participations = all_participations.reverse
+  end
 
 end
