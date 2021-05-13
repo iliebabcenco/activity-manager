@@ -9,7 +9,7 @@ module UserHelper
   end
   def display_personal_activities(param="true", user)
       if param == "true"
-          return user.personal_activities.to_a
+          return user.personal_recent_activities.to_a
       else
           return user.personal_previous_activities.to_a
       end

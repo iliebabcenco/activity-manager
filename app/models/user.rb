@@ -16,13 +16,13 @@ class User < ApplicationRecord
     activities.personal
   end
   def personal_recent_activities
-    activities.personal
+    activities.personal.order('schedule_date')
   end
   def personal_previous_activities
     activities.personal.order('schedule_date desc')
   end
   def external_activities
-    activities.all.external
+    activities.all.external.order('schedule_date')
   end
   def external_previous_activities
     activities.all.external.order('schedule_date desc')

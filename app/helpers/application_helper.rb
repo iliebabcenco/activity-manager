@@ -53,8 +53,8 @@ module ApplicationHelper
     end
 
     def display_flash(flash, activity)
-        return unless flash.to_a.length == 0
-        content_tag :p, " #{flash.to_a.join('. ') }", class: 'errors'
+        return if flash.empty?
+        content_tag :p, "You are doing something wrong: #{flash.to_a.join('. ') }", class: 'errors'
     end
 
 

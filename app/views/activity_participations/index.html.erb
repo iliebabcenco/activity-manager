@@ -5,8 +5,8 @@
     </div>
 </header>
 <div class="most_div">
-    <%= link_to "Most Recent", activity_participations_path(:sorted => "true"), class: 'most_btn' %>
-    <%= link_to "Most Ancient", activity_participations_path(:sorted => "false"), class: 'most_btn' %>
+    <%= link_to "Closer", activity_participations_path(:sorted => "true"), class: 'most_btn' %>
+    <%= link_to "Further", activity_participations_path(:sorted => "false"), class: 'most_btn' %>
 </div>
 
 <%= render display_participation_activities(params[:sorted], current_user) %>
