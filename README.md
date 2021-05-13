@@ -5,6 +5,15 @@
 I did this project for learning purposes as a capstone project from Microverse after completing the Ruby on Rails curriculum.
 It is a web app for daily activities and is intended for mobile phones.
 
+I implemented next features in this project:
+
+1. User's page with link for navigation;
+2. Personal activities page where a user can create, see and sort all personal activities;
+3. Group activities page where are displayed only public activities created by user or where user is a participant;
+4. All participations page which includes all activities created by user and also where user is a participant;
+5. All groups where users can create new group or select from existing to show their ideas of activities or to find something interesting activities from other users;
+6. Feed page which displays all users' activities ordered by created time.
+
 ## Built With
 
 - Ruby on Rails
