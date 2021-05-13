@@ -5,10 +5,10 @@
     </div>
 </header>
 <%= form_with model: @group, url: groups_path do |a| %>
-<div>
+<div class="field">
     <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
 </div>
-<div class="my-4">
+<div class="field">
     <%= a.text_field :icon, required: true, placeholder: "Icon URL", class:"form-control" %>
 </div>
 <div class="d-flex justify-content-end">
