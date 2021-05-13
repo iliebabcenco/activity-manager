@@ -9,5 +9,5 @@
     <%= link_to "Further", activity_participations_path(:sorted => "false"), class: 'most_btn' %>
 </div>
 
-<%= render display_participation_activities(params[:sorted], current_user) %>
+<%= render display_participation_activities(current_user, params[:sorted]) %>
 <br>

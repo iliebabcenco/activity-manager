@@ -10,7 +10,7 @@
 </div>
 
 
-<%= render display_personal_activities(params[:sorted], current_user) %>
+<%= render display_personal_activities(current_user, params[:sorted]) %>
 <div class="p-5"></div>
 
 <%= link_to "Add new personal activity", activities_new_personal_path, class:'add-link' %>

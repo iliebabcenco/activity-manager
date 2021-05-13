@@ -8,5 +8,5 @@
     <%= link_to "Closer", external_activities_path(:sorted => "true"), class: 'most_btn' %>
     <%= link_to "Further", external_activities_path(:sorted => "false"), class: 'most_btn' %>
 </div>
-<%= render display_external_activities_by_param(params[:sorted], current_user) %>
+<%= render display_external_activities_by_param(current_user, params[:sorted]) %>
 <br>
