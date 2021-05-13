@@ -4,13 +4,7 @@
         <h3 class="header-title">Add new group activity</h3>
     </div>
 </header>
-<% flash.each do |activity, msg| %>
-<div>
-    <ul>
-        <li><%= msg %></li>
-    </ul>
-</div>
-<% end %>
+<%= display_flash(flash, @activity) %>
 <%= form_with model: @activity, url: activities_new_external_path do |a| %>
 <%=a.hidden_field :group_id, value: params[:group] %>
 <div class="field">

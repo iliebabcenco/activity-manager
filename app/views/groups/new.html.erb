@@ -5,15 +5,7 @@
     </div>
 </header>
 
-<% if @group.errors.any? %>
-<div id="error_explanation">
-    <ul>
-        <% @group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
+<%= display_errors(@group) %>
 
 <%= form_with model: @group, url: groups_path do |a| %>
 

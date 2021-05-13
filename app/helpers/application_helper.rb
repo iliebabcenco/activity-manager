@@ -45,5 +45,32 @@ module ApplicationHelper
 
     end
     
+
+    def display_errors(obj)
+        return unless obj.errors.full_messages.any?
+    
+        content_tag :p, "You are doing something wrong: #{obj.errors.full_messages.join('. ')}", class: 'errors'
+    end
+
+    def display_flash(flash, activity)
+        return unless flash.to_a.length == 0
+        content_tag :p, " #{flash.to_a.join('. ') }", class: 'errors'
+    end
+
+
+    def render_notification(notice, class_name)
+        return unless notice.present?
+
+        box_wrapper(class_name) do
+            notice
+        end
+    end
+    
+    private
+
+    def box_wrapper(class_name, &block)
+        content = capture(&block)
+        content_tag(:div, content, class: class_name)
+    end
 end
 

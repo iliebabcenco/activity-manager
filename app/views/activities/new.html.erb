@@ -4,15 +4,7 @@
          <h3 class="header-title">Add new personal activity</h3>
      </div>
  </header>
- <% if @activity.errors.any? %>
- <div id="error_explanation">
-     <ul>
-         <% @activity.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-         <% end %>
-     </ul>
- </div>
- <% end %>
+ <%= display_errors(@activity) %>
  <%= form_with model: @activity, url: activities_new_personal_path do |a| %>
  <div class="field">
      <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
