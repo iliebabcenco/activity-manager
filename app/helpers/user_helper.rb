@@ -45,7 +45,10 @@ module UserHelper
 
       html += "<li class='nav-item'>
       #{link_to 'Sign Out', destroy_user_session_path, class: 'nav-link active text-white'}</li></ul>"
-
+    else
+      html += "<h3 class='text-white h4 ms-3 mb-5'>This is #{@user.username}'s page</h3>"
+      html += "<ul class='nav flex-column'><li class='nav-item'>
+      #{link_to 'Go to my page', user_path(current_user.id), class: 'nav-link active text-white'}<hr></li></ul"
     end
     html.html_safe
   end
