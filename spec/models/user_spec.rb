@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'correctly associates between a user and activities and groups' do
+  context 'correctly validations for users' do
     let(:user) { User.create!(username: 'Ilie', password: '123456', email: 'mail@mail.com') }
 
     it 'check a correct username length' do
@@ -12,12 +12,12 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to be false
     end
     it 'check creation with the same username' do
-      user = User.create(username: 'Ilie', password: '123456', email: 'mail@mail.com')
+      User.create(username: 'Ilie', password: '123456', email: 'mail@mail.com')
       user2 = User.create(username: 'Ilie', password: '123456', email: 'mail2@mail.com')
       expect(user2.valid?).to be false
     end
     it 'check creation with the same username' do
-      user = User.create(username: 'Ilie', password: '123456', email: 'mail@mail.com')
+      User.create(username: 'Ilie', password: '123456', email: 'mail@mail.com')
       user2 = User.create(username: 'Ilie2', password: '123456', email: 'mail@mail.com')
       expect(user2.valid?).to be false
     end
@@ -29,11 +29,7 @@ RSpec.describe User, type: :model do
       user = User.create(username: 'Ilie', password: '1', email: 'mail@mail.com')
       expect(user.valid?).to be false
     end
-    it 'check a correct email length' do
-      user = User.create(username: 'Ilie', password: '123456', email: 'mail@mail.com')
-      expect(user.valid?).to be true
-    end
-    it 'check a incorrect passwemailord length' do
+    it 'check a incorrect email length' do
       user = User.create(username: 'Ilie', password: '123456', email: '@')
       expect(user.valid?).to be false
     end

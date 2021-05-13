@@ -1,16 +1,9 @@
 module ActivityHelper
-    def display_participation_button(activity, user)
+  def display_participation_button(activity, user)
+    render 'participation_form', activity: activity unless activity.participants.include?(user)
+  end
 
-        unless activity.participants.include?(user)
-            render 'participation_form', activity: activity
-        end
-    end
-    def display_participants(activity, user)
-
-        unless activity.participants.empty?
-           render activity.participants
-        end
-    end
-
-     
+  def display_participants(activity, _user)
+    render activity.participants unless activity.participants.empty?
+  end
 end
