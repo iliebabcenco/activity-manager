@@ -7,12 +7,10 @@ class UsersController < Devise::RegistrationsController
         @users = User.all
     end
     def personal_activities
-        #@user = User.find(params[:id])
         pers_activities = current_user.personal_activities
     end
 
     def external_activities
-        #@user = User.find(params[:id])
         activities = current_user.external_activities
     end
 
@@ -20,6 +18,5 @@ class UsersController < Devise::RegistrationsController
 
     def user_params
        params.require(:user).permit(:email, :username)
-    #    params.require(:user).permit(:username)
     end
 end

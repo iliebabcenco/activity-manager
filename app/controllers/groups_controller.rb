@@ -10,11 +10,11 @@ class GroupsController < ApplicationController
     end
     def create
         user = current_user
-        group = user.groups.build(group_params)
-        if group.save
-            redirect_to groups_path, notice: "groups has been successfuly created"
+        @group = user.groups.build(group_params)
+        if @group.save
+            redirect_to groups_path
         else
-            render :new, alert: "something wrong with group creation"
+            render :new
         end
     end
     def show

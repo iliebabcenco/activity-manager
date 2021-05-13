@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :email, uniqueness: true
-  validates :username, uniqueness: true
+  validates :email, uniqueness: true, length: { in: 5..30 }
+  validates :username, uniqueness: true, length: { in: 2..30 }
   has_many :activities, foreign_key: "author_id", class_name: 'Activity', dependent: :destroy
 
   has_many :activity_participations, foreign_key: "participant_id", class_name: 'ActivityParticipation', dependent: :destroy
@@ -35,32 +35,22 @@ class User < ApplicationRecord
   end
 
   def create_external_activity(activity_external_params)
-    result = false
     activity = external_activities.build(activity_external_params)
-    begin
       ActiveRecord::Base.transaction do
-        activity.save!
+       if activity.save
         act_particip = ActivityParticipation.create(participant_id: self.id, activity_id: activity.id)
-        result = true
       end
-      rescue ActiveRecord::Rollback
-        result = false
-      end
-      result
+    end
+      activity
   end
   def create_personal_activity(activity_personal_params)
-    result = false
     activity = personal_activities.build(activity_personal_params)
-    begin
       ActiveRecord::Base.transaction do
-        activity.save!
-        act_particip = ActivityParticipation.create(participant_id: self.id, activity_id: activity.id)
-        result = true
+        if activity.save
+          act_particip = ActivityParticipation.create(participant_id: self.id, activity_id: activity.id)
+        end
       end
-      rescue ActiveRecord::Rollback
-        result = false
-      end
-      result
+      activity
   end
 
   def self.feed_arr

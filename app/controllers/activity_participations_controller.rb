@@ -11,7 +11,7 @@ class ActivityParticipationsController < ApplicationController
         if ap.save
             redirect_to group_path(gr.id), notice: "Now you participate to activity!"
         else
-            redirect_to group_path(gr.id), notice: "Failed to participate!"
+            redirect_to group_path(gr.id), alert: ap.errors.full_messages
         end
     end
 
