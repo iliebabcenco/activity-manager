@@ -11,7 +11,7 @@ I implemented next features in this project:
 2. Personal activities page where a user can create, see and sort all personal activities;
 3. Group activities page where are displayed only public activities created by user or where user is a participant;
 4. All participations page which includes all activities created by user and also where user is a participant;
-5. All groups where users can create new group or select from existing to show their ideas of activities or to find something interesting activities from other users;
+5. All groups page where users can create new groups or select from existing to show their ideas of activities or to find some interesting activities from other users;
 6. Feed page which displays all users' activities ordered by created time.
 
 ## Built With
@@ -29,10 +29,17 @@ I implemented next features in this project:
 4. Yarn
 5. Node.js
 
-- Clone this repository by copying the link after clicking the "code" button above
-- Run "bundle install" in your computer terminal to install required gems
-- Run "rails server" to start the server
-- Open in your browser the URL http://localhost:3000/
+- Open the terminal in the directory where you want to install the app;
+- Run command `git clone git@github.com:iliebabcenco/contributions.git` which will clone the project;
+- Switch to the main directory of project using cd;
+- Run `bundle install` in your computer terminal to install required gems;
+- Run `rails db:create` for creating the database on your local machine and also `rails db:migrate` for migration;
+  (P.S. If you have any authentification errors with your database on running previous commands, you should got to the config/database.yml file and introduce in development section and also in test section two lines of code ex:
+  `username: "postgres"`
+  `password: 123456`
+  where username is your local postgres user(usually it is postgres and your password))
+- Run `rails server` to start the server;
+- Open in your browser the URL http://localhost:3000/;
 - Use it.
 
 ## How it looks
@@ -42,17 +49,17 @@ I implemented next features in this project:
 | ![](app/assets/images/1.png) | ![](app/assets/images/2.png) | ![](app/assets/images/3.png) |
 | ![](app/assets/images/4.png) | ![](app/assets/images/5.png) |
 
-## How can I play?
-
-1. You can connect to [Telegram](https://web.telegram.org/) and find `@ilie_smart_bot` and try to play with him :) or you may click [here](https://telegram.me/ilie_smart_bot)
-
 ### Run tests
 
 1. Open terminal and switch to project directory
-2. Write next line:
+2. Write next lines:
 
 ```
-    rpsec --format documentation
+    rails db:migrate RAILS_ENV=test
+```
+
+```
+    rspec --format documentation
 ```
 
 ### Deployment

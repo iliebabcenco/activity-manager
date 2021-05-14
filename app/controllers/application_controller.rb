@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  # attr_accessor :username
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
@@ -15,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource)
-    user_path(current_user) # your path
+    user_path(current_user)
   end
 end
