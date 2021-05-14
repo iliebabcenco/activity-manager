@@ -18,4 +18,4 @@
 <h3 class="ms-5"><%= @group.name %>'s activities:</h3>
 <%= render @group.activities %>
 <div class="p-5"></div>
-<%= link_to "Add new external activity", activities_new_external_path(group: @group.id), class: "btn-link add-link" %>
+<%= link_to "Add new group activity", activities_new_external_path(group: @group.id), class: "btn-link add-link" %>

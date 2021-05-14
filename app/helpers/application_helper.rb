@@ -15,7 +15,7 @@ module ApplicationHelper
         html += "<div class='feed-part'><h4>"
         html += "User #{link_to each.participant.username, user_path(each.participant.id)}"
         html += " now is a participant at #{each.activity.name} activity</h4>"
-        html += "<p> From the group #{link_to each.activity.group.name, group_path(each.id)}</p>"
+        html += "<p> From the group #{link_to each.activity.group.name, group_path(each.activity.group.id)}</p>"
         html += "<p>#{each.created_at}</div>"
       elsif each.instance_of? Group
         html += "<div class='feed-part'><h4>User "

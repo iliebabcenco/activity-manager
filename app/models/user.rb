@@ -24,11 +24,11 @@ class User < ApplicationRecord
   end
 
   def external_activities
-    activities.all.external.order('schedule_date')
+    activities.external.order('schedule_date')
   end
 
   def external_previous_activities
-    activities.all.external.order('schedule_date desc')
+    activities.external.order('schedule_date desc')
   end
 
   def all_participations
@@ -56,7 +56,8 @@ class User < ApplicationRecord
   end
 
   def self.feed_arr
-    arr = Activity.all + Group.all + User.all + ActivityParticipation.all
+    arr = Activity.preload(:author) + Group.preload(:creator) + User.all + ActivityParticipation.preload(:participant,
+                                                                                                         :activity)
     (arr.sort_by(&:created_at).reverse)[0..10]
   end
 end
