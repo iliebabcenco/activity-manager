@@ -1,0 +1,28 @@
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-arrow-left fa-2x'></i"), root_path, class: "link_i" %>
+        <h3>Sign up</h3>
+    </div>
+</header>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form-control" %>
+</div>
+<div class="field">
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username", class:"form-control" %>
+</div>
+
+<div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class:"form-control" %>
+</div>
+
+<div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class:"form-control" %>
+</div>
+
+<div class="btn_actions">
+    <%= f.submit "Sign up", class: "conf-btn" %>
+</div>
+<% end %>

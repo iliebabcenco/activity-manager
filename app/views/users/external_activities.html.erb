@@ -1,0 +1,12 @@
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">Group activities</h3>
+    </div>
+</header>
+<div class="most_div">
+    <%= link_to "Closer", external_activities_path(:sorted => "true"), class: 'most_btn' %>
+    <%= link_to "Further", external_activities_path(:sorted => "false"), class: 'most_btn' %>
+</div>
+<%= render display_external_activities_by_param(current_user, params[:sorted]) %>
+<br>

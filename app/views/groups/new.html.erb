@@ -1,0 +1,21 @@
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-arrow-left fa-2x'></i"), groups_path, class: "link_i" %>
+        <h3>Add a new group</h3>
+    </div>
+</header>
+
+<%= display_errors(@group) %>
+
+<%= form_with model: @group, url: groups_path do |a| %>
+
+<div class="field">
+    <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
+</div>
+<div class="field">
+    <%= a.text_field :icon, required: true, placeholder: "Icon URL", class:"form-control" %>
+</div>
+<div class="d-flex justify-content-end">
+    <%= a.submit 'Create Group', class: "btn-link add-link" %>
+</div>
+<% end %>

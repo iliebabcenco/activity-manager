@@ -1,0 +1,10 @@
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">All groups</h3>
+    </div>
+</header>
+<%= render @groups %>
+<div class="p-5"></div>
+
+<%= link_to "Create new group", new_group_path, class: "btn-link add-link" %>

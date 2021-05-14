@@ -1,0 +1,16 @@
+<header class="main-header">
+    <div class="mh-inner-div">
+        <%= link_to tag("i class='fas fa-bars menu-fas fa-2x'></i"), user_path(current_user.id), class: "link_i" %>
+        <h3 class="header-title">Personal activities</h3>
+    </div>
+</header>
+<div class="most_div">
+    <%= link_to "Closer", personal_activities_path(:sorted => "true"), class: 'most_btn' %>
+    <%= link_to "Further", personal_activities_path(:sorted => "false"), class: 'most_btn' %>
+</div>
+
+
+<%= render display_personal_activities(current_user, params[:sorted]) %>
+<div class="p-5"></div>
+
+<%= link_to "Add new personal activity", activities_new_personal_path, class:'add-link' %>
