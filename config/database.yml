@@ -20,6 +20,8 @@ development:
   database: contributions
   pool: 5
   timeout: 5000
+  username: 'postgres'
+  password: 456321
 
 test:
   adapter: postgresql
@@ -27,3 +29,5 @@ test:
   database: contributions
   pool: 5
   timeout: 5000
+  username: 'postgres'
+  password: 456321

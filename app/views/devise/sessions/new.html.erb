@@ -5,26 +5,28 @@
     </div>
 </header>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
-<div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form-control" %>
-</div>
+<div class="sign-in-div">
 
-<div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"form-control" %>
-</div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form-control" %>
+    </div>
 
-<% if devise_mapping.rememberable? %>
-<div class="check-field">
-    <%= f.check_box :remember_me, class: "form-check-input" %>
-    <%= f.label :remember_me, class:"form-check-label" %>
-</div>
-<% end %>
+    <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"form-control" %>
+    </div>
 
-<div class="btn_actions">
-    <%= f.submit "Sign in", class: "conf-btn" %>
-    <br>
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "simple-link" %>
+    <% if devise_mapping.rememberable? %>
+    <div class="check-field">
+        <%= f.check_box :remember_me, class: "form-check-input" %>
+        <%= f.label :remember_me, class:"form-check-label" %>
+    </div>
+    <% end %>
+
+    <div class="btn_actions">
+        <%= f.submit "Sign in", class: "conf-btn" %>
+        <br>
+    </div>
+    <% end %>
 </div>
-<% end %>

@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $nav-color: #3778c2;
-$main-font: 'proxima-nova', sans-serif !important;
+$main-font: 'proxima-nova',
+sans-serif !important;
 
 .root_btn {
   width: 70%;
@@ -28,8 +29,19 @@ $main-font: 'proxima-nova', sans-serif !important;
   background-color: rgb(185, 182, 182);
 }
 
+.root_btn_div_inner {
+  border: 1px solid gray;
+  padding: 3rem;
+  border-radius: 2%;
+}
+
 .root_btn_div {
-  padding-top: 45%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -91,4 +103,18 @@ $main-font: 'proxima-nova', sans-serif !important;
   border: 1px solid red;
   padding: 0.5rem;
   margin: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .sign-in-div,
+  .sign-up-div {
+    text-align: center;
+    width: 40rem;
+    margin: 4rem auto;
+  }
+
+  .new_user {
+    width: 100%;
+  }
 }
