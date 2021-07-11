@@ -1,0 +1,5 @@
+<%= form_with model: @activity_participation, url: activity_participations_path do |a| %>
+<%= a.hidden_field :participant_id, value: current_user.id %>
+<%= a.hidden_field :activity_id, value: activity.id %>
+<%= a.submit 'Participate!', class: "btn btn-success px-5" %>
+<% end %>

@@ -1,0 +1,21 @@
+ <header class="main-header">
+     <div class="mh-inner-div">
+         <%= link_to tag("i class='fas fa-arrow-left fa-2x'></i"), personal_activities_path, class: "link_i" %>
+         <h3 class="header-title">Add new personal activity</h3>
+     </div>
+ </header>
+ <%= display_errors(@activity) %>
+ <%= form_with model: @activity, url: activities_new_personal_path do |a| %>
+ <div class="field">
+     <%= a.text_field :name, required: true, placeholder: "Title", class:"form-control" %>
+ </div>
+ <div class="field">
+     <%= a.text_area :description, required: true, placeholder: "Description", class:"form-control" %>
+ </div>
+ <div class="field">
+     <%= a.datetime_field :schedule_date, required: true, class:"form-control" %>
+ </div>
+ <div class="d-flex justify-content-end">
+     <%= a.submit 'Create Activity', class: "btn-link add-link" %>
+ </div>
+ <% end %>
